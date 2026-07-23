@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Search Student</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/form.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="form-box">
+
+        <h1>🔍 Search Student</h1>
+
+        <p>
+            Search students by Name, Application ID or Course.
+        </p>
+
+        <form method="POST">
+
+            <div class="grid">
+
+                <div class="input-box">
+
+                    <label>Search</label>
+
+                    <input type="text"
+                           name="keyword"
+                           placeholder="Enter Name, Application ID or Course">
+
+                </div>
+
+            </div>
+
+            <div class="buttons">
+
+                <a href="/dashboard"
+                   class="back-btn">
+
+                    ← Dashboard
+
+                </a>
+
+                <button type="submit"
+                        class="next-btn">
+
+                    🔍 Search
+
+                </button>
+
+            </div>
+
+        </form>
+
+        <br><br>
+
+        {% if students %}
+
+        <table style="width:100%;
+                      border-collapse:collapse;
+                      color:white;">
+
+            <thead>
+
+                <tr style="background:rgba(255,255,255,0.20);">
+
+                    <th style="padding:12px;">ID</th>
+
+                    <th>Name</th>
+
+                    <th>Course</th>
+
+                    <th>Gender</th>
+
+                    <th>Actions</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+            {% for student in students %}
+
+                <tr>
+
+                    <td style="padding:12px;">
+                        {{ student[0] }}
+                    </td>
+
+                    <td>
+                        {{ student[1] }}
+                    </td>
+
+                    <td>
+                        {{ student[2] }}
+                    </td>
+
+                    <td>
+                        {{ student[3] }}
+                    </td>
+
+                    <td>
+
+                        <a href="/view/{{ student[0] }}"
+                           style="color:#FFD700;
+                                  text-decoration:none;
+                                  margin-right:15px;">
+
+                            View
+
+                        </a>
+
+                        <a href="/edit/{{ student[0] }}"
+                           style="color:#00FF99;
+                                  text-decoration:none;
+                                  margin-right:15px;">
+
+                            Edit
+
+                        </a>
+
+                        <a href="/delete/{{ student[0] }}"
+                           onclick="return confirm('Are you sure you want to delete this application?');"
+                           style="color:#FF6666;
+                                  text-decoration:none;">
+
+                            Delete
+
+                        </a>
+
+                    </td>
+
+                </tr>
+
+            {% endfor %}
+
+            </tbody>
+
+        </table>
+
+        {% else %}
+
+            <br>
+
+            <h3 style="text-align:center;color:white;">
+
+                No student records found.
+
+            </h3>
+
+        {% endif %}
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

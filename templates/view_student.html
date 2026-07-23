@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>View Student Application</title>
+
+<link rel="stylesheet"
+      href="{{ url_for('static', filename='css/form.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="form-box">
+
+        <h1>👨‍🎓 Student Application</h1>
+
+<p>Student details are shown below.</p>
+
+<div class="grid">
+
+    <div class="input-box">
+        <label>Application ID</label>
+        <input type="text" value="{{ student.id }}" readonly>
+    </div>
+
+    <div class="input-box">
+        <label>Full Name</label>
+        <input type="text" value="{{ student.fullname }}" readonly>
+    </div>
+
+    <div class="input-box">
+        <label>Date of Birth</label>
+        <input type="text" value="{{ student.dob }}" readonly>
+    </div>
+
+    <div class="input-box">
+        <label>Gender</label>
+        <input type="text" value="{{ student.gender }}" readonly>
+    </div>
+
+    <div class="input-box">
+        <label>Father's Name</label>
+        <input type="text" value="{{ student.father }}" readonly>
+    </div>
+
+    <div class="input-box">
+        <label>Mother's Name</label>
+        <input type="text" value="{{ student.mother }}" readonly>
+    </div>
+
+</div>
+
+<br>
+
+<a href="{{ url_for('admin_dashboard') }}" class="back-btn">
+    ← Back to Dashboard
+</a>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

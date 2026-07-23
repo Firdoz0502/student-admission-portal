@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Document Upload</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/form.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="form-box">
+
+        <h1>Upload Documents</h1>
+
+        <p>
+            Upload all the required documents before submitting your application.
+        </p>
+
+        <form action="/preview"
+              method="POST"
+              enctype="multipart/form-data">
+
+            <div class="grid">
+
+                <div class="input-box">
+
+                    <label>Passport Size Photo</label>
+
+                    <input type="file"
+                           name="photo"
+                           accept=".jpg,.jpeg,.png"
+                           required>
+
+                </div>
+
+                <div class="input-box">
+
+                    <label>SSLC Marks Card</label>
+
+                    <input type="file"
+                           name="sslc"
+                           accept=".pdf,.jpg,.jpeg,.png"
+                           required>
+
+                </div>
+
+                <div class="input-box">
+
+                    <label>PUC / 12th Marks Card</label>
+
+                    <input type="file"
+                           name="puc"
+                           accept=".pdf,.jpg,.jpeg,.png"
+                           required>
+
+                </div>
+
+                <div class="input-box">
+
+                    <label>Aadhaar Card</label>
+
+                    <input type="file"
+                           name="aadhaar"
+                           accept=".pdf,.jpg,.jpeg,.png"
+                           required>
+
+                </div>
+
+                <div class="input-box">
+
+                    <label>Transfer Certificate (Optional)</label>
+
+                    <input type="file"
+                           name="tc"
+                           accept=".pdf,.jpg,.jpeg,.png">
+
+                </div>
+
+            </div>
+
+            <div class="buttons">
+
+                <a href="/academic"
+                   class="back-btn">
+
+                    ← Back
+
+                </a>
+
+                <button type="submit"
+                        class="next-btn">
+
+                    Preview →
+
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

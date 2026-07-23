@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Academic Details</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/form.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="form-box">
+
+        <h1>Academic Details</h1>
+
+        <p>Please enter your educational qualifications.</p>
+
+        <form action="/documents" method="POST">
+
+            <div class="grid">
+
+                <div class="input-box">
+
+                    <label>SSLC Board</label>
+
+                    <input type="text"
+                           name="sslc_board"
+                           placeholder="e.g. Karnataka State Board"
+                           required>
+
+                </div>
+
+                <div class="input-box">
+
+                    <label>SSLC Percentage (%)</label>
+
+                    <input type="number"
+                           name="sslc_percentage"
+                           min="0"
+                           max="100"
+                           step="0.01"
+                           placeholder="Enter percentage"
+                           required>
+
+                </div>
+
+                <div class="input-box">
+
+                    <label>SSLC Passing Year</label>
+
+                    <input type="number"
+                           name="sslc_year"
+                           placeholder="2024"
+                           required>
+
+                </div>
+
+                <div class="input-box">
+
+                    <label>PUC / 12th Board</label>
+
+                    <input type="text"
+                           name="puc_board"
+                           placeholder="Enter board name"
+                           required>
+
+                </div>
+
+                <div class="input-box">
+
+                    <label>PUC / 12th Percentage (%)</label>
+
+                    <input type="number"
+                           name="puc_percentage"
+                           min="0"
+                           max="100"
+                           step="0.01"
+                           placeholder="Enter percentage"
+                           required>
+
+                </div>
+
+                <div class="input-box">
+
+                    <label>PUC Passing Year</label>
+
+                    <input type="number"
+                           name="puc_year"
+                           placeholder="2026"
+                           required>
+
+                </div>
+
+                <div class="input-box">
+
+                    <label>Course Applying For</label>
+
+                    <select name="course" required>
+
+                        <option value="">Select Course</option>
+
+                        <option>BCA</option>
+
+                        <option>BBA</option>
+
+                        <option>B.Com</option>
+
+                        <option>B.Sc</option>
+
+                    </select>
+
+                </div>
+
+                <div class="input-box">
+
+                    <label>Preferred Shift</label>
+
+                    <select name="shift" required>
+
+                        <option value="">Select Shift</option>
+
+                        <option>Morning</option>
+
+                        <option>Afternoon</option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+            <div class="buttons">
+
+                <a href="/personal"
+                   class="back-btn">
+
+                    ← Back
+
+                </a>
+
+                <button type="submit"
+                        class="next-btn">
+
+                    Next →
+
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

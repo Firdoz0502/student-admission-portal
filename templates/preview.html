@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Application Preview</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/form.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="form-box">
+
+        <h1>Application Preview</h1>
+
+        <p>Please verify all your details before final submission.</p>
+
+        <!-- Personal Details -->
+
+        <h2 style="color:white;margin-bottom:15px;">
+            Personal Details
+        </h2>
+
+        <div class="grid">
+
+            <div class="input-box">
+                <label>Full Name</label>
+                <input type="text"
+                       value="{{ session.get('fullname','') }}"
+                       readonly>
+            </div>
+
+            <div class="input-box">
+                <label>Date of Birth</label>
+                <input type="text"
+                       value="{{ session.get('dob','') }}"
+                       readonly>
+            </div>
+
+            <div class="input-box">
+                <label>Gender</label>
+                <input type="text"
+                       value="{{ session.get('gender','') }}"
+                       readonly>
+            </div>
+
+            <div class="input-box">
+                <label>Father's Name</label>
+                <input type="text"
+                       value="{{ session.get('father','') }}"
+                       readonly>
+            </div>
+
+            <div class="input-box">
+                <label>Mother's Name</label>
+                <input type="text"
+                       value="{{ session.get('mother','') }}"
+                       readonly>
+            </div>
+
+            <div class="input-box">
+                <label>Nationality</label>
+                <input type="text"
+                       value="{{ session.get('nationality','') }}"
+                       readonly>
+            </div>
+
+            <div class="input-box">
+                <label>Category</label>
+                <input type="text"
+                       value="{{ session.get('category','') }}"
+                       readonly>
+            </div>
+
+            <div class="input-box">
+                <label>Blood Group</label>
+                <input type="text"
+                       value="{{ session.get('blood','') }}"
+                       readonly>
+            </div>
+
+        </div>
+
+        <br>
+
+        <!-- Academic Details -->
+
+        <h2 style="color:white;margin-bottom:15px;">
+            Academic Details
+        </h2>
+
+        <div class="grid">
+
+            <div class="input-box">
+                <label>SSLC Board</label>
+                <input type="text"
+                       value="{{ session.get('sslc_board','') }}"
+                       readonly>
+            </div>
+
+            <div class="input-box">
+                <label>SSLC Percentage</label>
+                <input type="text"
+                       value="{{ session.get('sslc_percentage','') }}"
+                       readonly>
+            </div>
+
+            <div class="input-box">
+                <label>SSLC Passing Year</label>
+                <input type="text"
+                       value="{{ session.get('sslc_year','') }}"
+                       readonly>
+            </div>
+
+            <div class="input-box">
+                <label>PUC Board</label>
+                <input type="text"
+                       value="{{ session.get('puc_board','') }}"
+                       readonly>
+            </div>
+
+            <div class="input-box">
+                <label>PUC Percentage</label>
+                <input type="text"
+                       value="{{ session.get('puc_percentage','') }}"
+                       readonly>
+            </div>
+
+            <div class="input-box">
+                <label>PUC Passing Year</label>
+                <input type="text"
+                       value="{{ session.get('puc_year','') }}"
+                       readonly>
+            </div>
+
+            <div class="input-box">
+                <label>Course</label>
+                <input type="text"
+                       value="{{ session.get('course','') }}"
+                       readonly>
+            </div>
+
+            <div class="input-box">
+                <label>Preferred Shift</label>
+                <input type="text"
+                       value="{{ session.get('shift','') }}"
+                       readonly>
+            </div>
+
+        </div>
+
+        <br>
+
+        <!-- Uploaded Documents -->
+
+        <h2 style="color:white;margin-bottom:15px;">
+            Uploaded Documents
+        </h2>
+
+        <div class="grid">
+
+            <div class="input-box">
+                <label>Photo</label>
+                <input type="text"
+                       value="{{ session.get('photo','') }}"
+                       readonly>
+            </div>
+
+            <div class="input-box">
+                <label>SSLC Marks Card</label>
+                <input type="text"
+                       value="{{ session.get('sslc','') }}"
+                       readonly>
+            </div>
+
+            <div class="input-box">
+                <label>PUC Marks Card</label>
+                <input type="text"
+                       value="{{ session.get('puc','') }}"
+                       readonly>
+            </div>
+
+            <div class="input-box">
+                <label>Aadhaar Card</label>
+                <input type="text"
+                       value="{{ session.get('aadhaar','') }}"
+                       readonly>
+            </div>
+
+            <div class="input-box">
+                <label>Transfer Certificate</label>
+                <input type="text"
+                       value="{{ session.get('tc','') }}"
+                       readonly>
+            </div>
+
+        </div>
+
+        <div class="buttons">
+
+            <a href="/documents"
+               class="back-btn">
+
+                ← Edit
+
+            </a>
+
+            <form action="/declaration" method="POST">
+
+                <button type="submit"
+                        class="next-btn">
+
+                    Continue →
+
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

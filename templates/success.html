@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Application Submitted</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/form.css') }}">
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="form-box" style="text-align:center;">
+
+        <div style="font-size:90px;">
+            🎉
+        </div>
+
+        <h1 style="margin-top:15px;">
+            Application Submitted Successfully
+        </h1>
+
+        <p style="margin-top:15px;">
+
+            Congratulations!
+
+            <br><br>
+
+            Your admission application has been submitted successfully.
+
+            <br><br>
+
+            Our admission team will verify your documents and contact you shortly.
+
+        </p>
+
+        <div style="margin:35px 0;
+                    background:rgba(255,255,255,.15);
+                    padding:20px;
+                    border-radius:15px;">
+
+            <h2 style="color:white;">
+                Application ID
+            </h2>
+
+            <h1 style="color:#FFD700;
+           margin-top:10px;">
+    {{ application_id }}
+</h1>
+
+        </div>
+
+        <div class="buttons">
+
+            <a href="/"
+               class="back-btn">
+
+                🏠 Home
+
+            </a>
+
+            <button onclick="window.print()"
+                    class="next-btn">
+
+                🖨 Print Application
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

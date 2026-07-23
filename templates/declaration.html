@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Declaration</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/form.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="form-box">
+
+        <h1>Declaration</h1>
+
+        <p>Please read the declaration carefully before submitting your application.</p>
+
+        <form action="/submit_application" method="POST">
+
+            <div style="background:rgba(255,255,255,0.15);
+                        padding:25px;
+                        border-radius:15px;
+                        color:white;
+                        line-height:1.8;
+                        margin-bottom:30px;">
+
+                <p>
+                    I hereby declare that all the information provided by me in this
+                    application is true and correct to the best of my knowledge.
+                    I understand that if any information is found to be false,
+                    incomplete, or misleading, my admission may be cancelled by
+                    the institution.
+                </p>
+
+            </div>
+
+            <div class="input-box">
+
+                <label>
+
+                    <input type="checkbox"
+                           name="agree"
+                           required>
+
+                    I have read and agree to the above declaration.
+
+                </label>
+
+            </div>
+
+            <br>
+
+            <div class="grid">
+
+                <div class="input-box">
+
+                    <label>Place</label>
+
+                    <input type="text"
+                           name="place"
+                           placeholder="Enter your city"
+                           required>
+
+                </div>
+
+                <div class="input-box">
+
+                    <label>Date</label>
+
+                    <input type="date"
+                           name="declaration_date"
+                           required>
+
+                </div>
+
+            </div>
+
+            <div class="buttons">
+
+                <a href="/preview"
+                   class="back-btn">
+
+                    ← Back
+
+                </a>
+
+                <button type="submit"
+                        class="next-btn">
+
+                    Final Submit
+
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

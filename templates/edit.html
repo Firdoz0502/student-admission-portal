@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Edit Student Application</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/form.css') }}">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="form-box">
+
+        <h1>✏ Edit Student Application</h1>
+
+        <p>
+            Update the student's information below.
+        </p>
+
+        <form method="POST">
+
+            <div class="grid">
+
+                <!-- Application ID -->
+
+                <div class="input-box">
+
+                    <label>Application ID</label>
+
+                    <input type="text"
+                           value="{{ student.id }}"
+                           readonly>
+
+                </div>
+
+                <!-- Full Name -->
+
+                <div class="input-box">
+
+                    <label>Full Name</label>
+
+                    <input type="text"
+                           name="fullname"
+                           value="{{ student.fullname }}"
+                           required>
+
+                </div>
+
+                <!-- Date of Birth -->
+
+                <div class="input-box">
+
+                    <label>Date of Birth</label>
+
+                    <input type="date"
+                           name="dob"
+                           value="{{ student.dob }}"
+                           required>
+
+                </div>
+
+                <!-- Gender -->
+
+                <div class="input-box">
+
+                    <label>Gender</label>
+
+                    <select name="gender" required>
+
+                        <option value="Male"
+                        {% if student.gender=="Male" %}selected{% endif %}>
+                        Male
+                        </option>
+
+                        <option value="Female"
+                        {% if student.gender=="Female" %}selected{% endif %}>
+                        Female
+                        </option>
+
+                        <option value="Other"
+                        {% if student.gender=="Other" %}selected{% endif %}>
+                        Other
+                        </option>
+
+                    </select>
+
+                </div>
+
+                <!-- Father's Name -->
+
+                <div class="input-box">
+
+                    <label>Father's Name</label>
+
+                    <input type="text"
+                           name="father"
+                           value="{{ student.father }}"
+                           required>
+
+                </div>
+
+                <!-- Mother's Name -->
+
+                <div class="input-box">
+
+                    <label>Mother's Name</label>
+
+                    <input type="text"
+                           name="mother"
+                           value="{{ student.mother }}"
+                           required>
+
+                </div>
+
+                <!-- Nationality -->
+
+                <div class="input-box">
+
+                    <label>Nationality</label>
+
+                    <input type="text"
+                           name="nationality"
+                           value="{{ student.nationality }}"
+                           required>
+
+                </div>
+
+                <!-- Category -->
+
+                <div class="input-box">
+
+                    <label>Category</label>
+
+                    <select name="category">
+
+                        <option value="General"
+                        {% if student.category=="General" %}selected{% endif %}>
+                        General
+                        </option>
+
+                        <option value="OBC"
+                        {% if student.category=="OBC" %}selected{% endif %}>
+                        OBC
+                        </option>
+
+                        <option value="SC"
+                        {% if student.category=="SC" %}selected{% endif %}>
+                        SC
+                        </option>
+
+                        <option value="ST"
+                        {% if student.category=="ST" %}selected{% endif %}>
+                        ST
+                        </option>
+
+                        <option value="EWS"
+                        {% if student.category=="EWS" %}selected{% endif %}>
+                        EWS
+                        </option>
+
+                    </select>
+
+                </div>
+
+                <!-- Blood Group -->
+
+                <div class="input-box">
+
+                    <label>Blood Group</label>
+
+                    <select name="blood">
+
+                        <option value="A+"
+                        {% if student.blood=="A+" %}selected{% endif %}>A+</option>
+
+                        <option value="A-"
+                        {% if student.blood=="A-" %}selected{% endif %}>A-</option>
+
+                        <option value="B+"
+                        {% if student.blood=="B+" %}selected{% endif %}>B+</option>
+
+                        <option value="B-"
+                        {% if student.blood=="B-" %}selected{% endif %}>B-</option>
+
+                        <option value="AB+"
+                        {% if student.blood=="AB+" %}selected{% endif %}>AB+</option>
+
+                        <option value="AB-"
+                        {% if student.blood=="AB-" %}selected{% endif %}>AB-</option>
+
+                        <option value="O+"
+                        {% if student.blood=="O+" %}selected{% endif %}>O+</option>
+
+                        <option value="O-"
+                        {% if student.blood=="O-" %}selected{% endif %}>O-</option>
+
+                    </select>
+
+                </div>
+                                <!-- SSLC Board -->
+
+                <div class="input-box">
+
+                    <label>SSLC Board</label>
+
+                    <input type="text"
+                           name="sslc_board"
+                           value="{{ student.sslc_board }}"
+                           required>
+
+                </div>
+
+                <!-- SSLC Percentage -->
+
+                <div class="input-box">
+
+                    <label>SSLC Percentage (%)</label>
+
+                    <input type="number"
+                           name="sslc_percentage"
+                           value="{{ student.sslc_percentage }}"
+                           min="0"
+                           max="100"
+                           step="0.01"
+                           required>
+
+                </div>
+
+                <!-- SSLC Passing Year -->
+
+                <div class="input-box">
+
+                    <label>SSLC Passing Year</label>
+
+                    <input type="number"
+                           name="sslc_year"
+                           value="{{ student.sslc_year }}"
+                           required>
+
+                </div>
+
+                <!-- PUC Board -->
+
+                <div class="input-box">
+
+                    <label>PUC / 12th Board</label>
+
+                    <input type="text"
+                           name="puc_board"
+                           value="{{ student.puc_board }}"
+                           required>
+
+                </div>
+
+                <!-- PUC Percentage -->
+
+                <div class="input-box">
+
+                    <label>PUC / 12th Percentage (%)</label>
+
+                    <input type="number"
+                           name="puc_percentage"
+                           value="{{ student.puc_percentage }}"
+                           min="0"
+                           max="100"
+                           step="0.01"
+                           required>
+
+                </div>
+
+                <!-- PUC Passing Year -->
+
+                <div class="input-box">
+
+                    <label>PUC Passing Year</label>
+
+                    <input type="number"
+                           name="puc_year"
+                           value="{{ student.puc_year }}"
+                           required>
+
+                </div>
+
+                <!-- Course -->
+
+                <div class="input-box">
+
+                    <label>Course Applying For</label>
+
+                    <select name="course" required>
+
+                        <option value="BCA"
+                        {% if student.course=="BCA" %}selected{% endif %}>
+                        BCA
+                        </option>
+
+                        <option value="BBA"
+                        {% if student.course=="BBA" %}selected{% endif %}>
+                        BBA
+                        </option>
+
+                        <option value="B.Com"
+                        {% if student.course=="B.Com" %}selected{% endif %}>
+                        B.Com
+                        </option>
+
+                        <option value="B.Sc"
+                        {% if student.course=="B.Sc" %}selected{% endif %}>
+                        B.Sc
+                        </option>
+
+                    </select>
+
+                </div>
+
+                <!-- Preferred Shift -->
+
+                <div class="input-box">
+
+                    <label>Preferred Shift</label>
+
+                    <select name="shift" required>
+
+                        <option value="Morning"
+                        {% if student.shift=="Morning" %}selected{% endif %}>
+                        Morning
+                        </option>
+
+                        <option value="Afternoon"
+                        {% if student.shift=="Afternoon" %}selected{% endif %}>
+                        Afternoon
+                        </option>
+
+                    </select>
+
+                </div>
+
+                <!-- Place -->
+
+                <div class="input-box">
+
+                    <label>Place</label>
+
+                    <input type="text"
+                           name="place"
+                           value="{{ student.place }}"
+                           placeholder="Enter your city"
+                           required>
+
+                </div>
+
+                <!-- Declaration Date -->
+
+                <div class="input-box">
+
+                    <label>Declaration Date</label>
+
+                    <input type="date"
+                           name="declaration_date"
+                           value="{{ student.declaration_date }}"
+                           required>
+
+                </div>
+
+            </div>
+                        <div class="buttons">
+
+                <a href="{{ url_for('admin_dashboard') }}"
+                   class="back-btn">
+
+                    ← Cancel
+
+                </a>
+
+                <button type="submit"
+                        class="next-btn">
+
+                    💾 Save Changes
+
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>
